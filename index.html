@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<title>ART Club &diams; Private club of art lovers</title>
+	 
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/sweet-alert.css"rel="stylesheet">
+	 
+	<link href="css/main.css" rel="stylesheet">
+ 
+	<!--[if lt IE 9]>
+	  <script src="js/html5shiv.js"></script>
+	  <script src="js/respond.min.js"></script>
+	<![endif]-->
+ 
+	<link rel="shortcut icon" href="images/favicon.png">
+	<!-- <script src="js/pace.js"></script> -->
+	<script src="js/sweet-alert.min.js"></script>
+ 	
+ 	<script src="//use.typekit.net/eun2iwa.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	<!-- <div class="preloader"></div> -->
+	<main id="top" class="masthead loading" role="main">
+		<div class="container">
+			<div class="logo"> <a href="/"><img src="images/logo@2x.png" height="114" width="151" alt="logo"></a>
+			</div>
+ 
+			<h1><strong>Private club of art lovers</strong><br><small style="color: white;">Rent exclusive art pieces without the hassle</small></h1>
+ 
+			<div class="row">
+				<div class="col-md-8 col-sm-12 col-md-offset-2 subscribe">
+					<form class="form-horizontal" role="form" action="http://my.memri.es/sign-up" id="subscribeForm" method="POST">
+						<div class="form-group">
+							<div class="col-md-8 col-sm-6 col-sm-offset-1 col-md-offset-0">
+								<input class="form-control input-lg" name="email" type="email" id="email" placeholder="Enter your email" data-validate="validate(required, email)" required="required">
+							</div>
+							<div class="col-md-4 col-sm-3">
+								<button type="submit" id="signup" class="btn btn-success btn-lg">REQUEST AN INVITE</button>
+							</div>
+						</div>
+					</form>
+					<span id="result" class="alertMsg"></span>
+				</div>
+			</div>
+		</div>
+	</main>
+ 
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<!-- <script src="js/easing.js"></script>
+<script src="js/nicescroll.js"></script>  -->
+ 
+<script>
+
+$(window).load(function() {
+	$('.masthead').delay(2000).removeClass('loading');
+
+	$('.scrollto, .gototop').bind('click',function(event){
+		var $anchor = $(this);
+		$('html, body').stop().animate({
+			scrollTop: $($anchor.attr('href')).offset().top
+		}, 1500,'easeInOutExpo');
+	 	event.preventDefault();
+	});
+
+	$('form').submit(function(e) {
+		e.preventDefault();
+		var email = $('#email').val();
+		$('#signup').attr('disabled', 'disabled');
+
+		$.post('http://my.memri.es/sign-up', {email: email}, function(d) {
+			if (d !== '') {
+				swal("Thank you!", "Thanks for signing up. We'll keep you posted as soon as we launch :-)", "success");
+				ga('send', 'pageview', {
+					'page': '/sign-up',
+					'title': 'Sign Up'
+				});
+				$('#signup').removeAttr('disabled');
+			} else {
+				swal("Oops...", "There is already an account for this email address.", "error");
+				$('#signup').removeAttr('disabled');
+			}
+	  	}).fail(function() {
+			swal("Oops...", "There seems to have been an error. Please try again later.", "error");
+			$('#signup').removeAttr('disabled');
+	  	});
+	});
+});
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-55593380-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+ 
+</body>
+</html>
