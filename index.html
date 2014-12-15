@@ -33,19 +33,19 @@
 			<div class="logo"> <a href="/"><img src="images/logo@2x.png" height="114" width="151" alt="logo"></a>
 			</div>
  
-			<h1><strong>Private club of art lovers</strong><br><small style="color: white;">Rent exclusive art pieces without the hassle</small></h1>
+			<h1>Private club of art lovers<br><small style="color: white;">Rent exclusive art pieces without the hassle</small></h1>
  
 			<div class="row">
-					<form class="form-horizontal" role="form" action="" id="subscribeForm" method="POST">
+					<form class="form-horizontal" role="form" action="https://docs.google.com/forms/d/1vQD_3ruX8cle4XUwC_EUdw1ONRrDQHIO4GP44Jtf0jc/formResponse" id="subscribeForm" method="POST">
 						<div class="form-group">
 							<div class="col-md-3 col-sm-4">
-								<input class="form-control input-lg" name="name" type="text" id="name" placeholder="Complete Name" data-validate="validate(required)" required="required">
+								<input class="form-control input-lg" name="entry.1380524133" type="text" id="name" placeholder="Complete Name" data-validate="validate(required)" required="required">
 							</div>
 							<div class="col-md-3 col-sm-4">
-								<input class="form-control input-lg" name="email" type="email" id="email" placeholder="Email Address" data-validate="validate(required, email)" required="required">
+								<input class="form-control input-lg" name="entry.1424197741" type="email" id="email" placeholder="Email Address" data-validate="validate(required, email)" required="required">
 							</div>
 							<div class="col-md-3 col-sm-4">
-								<input class="form-control input-lg" name="zip" type="text" id="zip" placeholder="Zip Code" data-validate="validate(required)" required="required">
+								<input class="form-control input-lg" name="entry.1612103632" type="text" id="zip" placeholder="Zip Code" data-validate="validate(required)" required="required">
 							</div>
 							<div class="col-md-3 col-sm-4 col-sm-offset-4 col-md-offset-0">
 								<button type="submit" id="signup" class="btn btn-success btn-lg">BECOME A MEMBER</button>
@@ -77,21 +77,23 @@ $(window).load(function() {
 
 	$('form').submit(function(e) {
 		e.preventDefault();
-		var email = $('#email').val();
+		var email = $('#email').val(),
+			name = $('#name').val(),
+			zip = $('#zip').val();
 		$('#signup').attr('disabled', 'disabled');
 
-		$.post('http://my.memri.es/sign-up', {email: email}, function(d) {
-			if (d !== '') {
-				swal("Thank you!", "Thanks for signing up. We'll keep you posted as soon as we launch :-)", "success");
+		$.post('https://docs.google.com/forms/d/1vQD_3ruX8cle4XUwC_EUdw1ONRrDQHIO4GP44Jtf0jc/formResponse', {
+			"entry.1380524133": name,
+			"entry.1424197741": email,
+			"entry.1612103632": zip
+			}, function(d) {
+				console.log(d);
+				swal("Thank you!", "Thanks for signing up. You'll be the first one to know when we launch :-)", "success");
 				ga('send', 'pageview', {
 					'page': '/sign-up',
 					'title': 'Sign Up'
 				});
 				$('#signup').removeAttr('disabled');
-			} else {
-				swal("Oops...", "There is already an account for this email address.", "error");
-				$('#signup').removeAttr('disabled');
-			}
 	  	}).fail(function() {
 			swal("Oops...", "There seems to have been an error. Please try again later.", "error");
 			$('#signup').removeAttr('disabled');
@@ -104,7 +106,7 @@ $(window).load(function() {
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-55593380-1', 'auto');
+ga('create', 'UA-45397392-3', 'auto');
 ga('send', 'pageview');
 
 </script>
