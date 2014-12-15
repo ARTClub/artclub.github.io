@@ -34,18 +34,19 @@
 			</div>
  
 			<h1>Private club of art lovers<br><small style="color: white;">Rent exclusive art pieces without the hassle</small></h1>
+			<br><br>
  
 			<div class="row">
-					<form class="form-horizontal" role="form" action="https://docs.google.com/forms/d/1vQD_3ruX8cle4XUwC_EUdw1ONRrDQHIO4GP44Jtf0jc/formResponse" id="subscribeForm" method="POST">
+					<form class="form-horizontal" role="form" action="https://docs.google.com/forms/d/1vQD_3ruX8cle4XUwC_EUdw1ONRrDQHIO4GP44Jtf0jc/viewform" id="subscribeForm" method="POST">
 						<div class="form-group">
 							<div class="col-md-3 col-sm-4">
-								<input class="form-control input-lg" name="entry.1380524133" type="text" id="name" placeholder="Complete Name" data-validate="validate(required)" required="required">
+								<input class="form-control input-lg" name="name" type="text" id="name" placeholder="Complete Name" data-validate="validate(required)" required="required">
 							</div>
 							<div class="col-md-3 col-sm-4">
-								<input class="form-control input-lg" name="entry.1424197741" type="email" id="email" placeholder="Email Address" data-validate="validate(required, email)" required="required">
+								<input class="form-control input-lg" name="email" type="email" id="email" placeholder="Email Address" data-validate="validate(required, email)" required="required">
 							</div>
 							<div class="col-md-3 col-sm-4">
-								<input class="form-control input-lg" name="entry.1612103632" type="text" id="zip" placeholder="Zip Code" data-validate="validate(required)" required="required">
+								<input class="form-control input-lg" name="zip" type="text" id="zip" placeholder="Zip Code" data-validate="validate(required)" required="required">
 							</div>
 							<div class="col-md-3 col-sm-4 col-sm-offset-4 col-md-offset-0">
 								<button type="submit" id="signup" class="btn btn-success btn-lg">BECOME A MEMBER</button>
@@ -82,10 +83,10 @@ $(window).load(function() {
 			zip = $('#zip').val();
 		$('#signup').attr('disabled', 'disabled');
 
-		$.post('https://docs.google.com/forms/d/1vQD_3ruX8cle4XUwC_EUdw1ONRrDQHIO4GP44Jtf0jc/formResponse', {
-			"entry.1380524133": name,
-			"entry.1424197741": email,
-			"entry.1612103632": zip
+		$.post('https://script.google.com/macros/s/AKfycbz7CQkaJIhUliXz7jjTEUnfcS3Dc8NMlY7-tJ5xZYZF-2btEGdt/exec', {
+			name: name,
+			email: email,
+			zip: zip
 			}, function(d) {
 				console.log(d);
 				swal("Thank you!", "Thanks for signing up. You'll be the first one to know when we launch :-)", "success");
