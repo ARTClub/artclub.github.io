@@ -322,7 +322,7 @@ input {
 	padding-bottom: 20px;
 }
 
-.features h4 { margin: -20px 0 30px; }
+.features h4 { margin: -20px 0 30px; line-height: 2em; }
 .features h4 a, .features h4 a:hover, .features h4 a:active, .features h4 a:visited, .features h4 a:focus {
 	background-color: #525252;
 	font-variant: small-caps;
@@ -471,7 +471,7 @@ padding: 40px 15px;
 	 /*Media Queries for smaller devices*/
 	 .masthead {
 		background-attachment: scroll;
-		height: 125vh;
+		height: 190vh;
 	}
 	.input-lg, .btn {
 		margin-top: 10px;
