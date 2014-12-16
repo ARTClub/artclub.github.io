@@ -192,18 +192,19 @@ $(document).ready(function() {
 			name: name,
 			email: email,
 			zip: zip
-			}, function(d) {
-				console.log(d);
-				swal("Thank you!", "Thanks for signing up. You'll be the first one to know when we launch :-)", "success");
-				ga('send', 'pageview', {
-					'page': '/sign-up',
-					'title': 'Sign Up'
-				});
-				$('#signup').removeAttr('disabled');
-	  	}).fail(function() {
-			swal("Oops...", "There seems to have been an error. Please try again later.", "error");
+			}
+	  	).always(function() {
+	  		swal("Thank you!", "Thanks for signing up. You'll be the first one to know when we launch :-)", "success");
+			ga('send', 'pageview', {
+				'page': '/sign-up',
+				'title': 'Sign Up'
+			});
 			$('#signup').removeAttr('disabled');
 	  	});
+	  // 	.fail(function() {
+			// swal("Oops...", "There seems to have been an error. Please try again later.", "error");
+			// $('#signup').removeAttr('disabled');
+	  // 	});
 	});
 
 	// Animating the process steps
