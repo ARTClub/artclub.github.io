@@ -433,45 +433,53 @@ to {
 /*MEDIA QUERIES*/
 
 @media (max-width: 991px) {
- h1 {
-font-size: 35px;
-line-height: 50px;
-margin: 15px 0;
-}
- h2 {
-font-size: 35px;
-}
- .testimonials [class*="col-"]:not(:first-child) {
- margin-top: 40px;
-}
- .planpricing [class*="col-"]:not(:first-child) {
- margin-top: 30px;
-}
- .breath {
-margin: 30px auto;
-}
+	 h1 {
+	font-size: 35px;
+	line-height: 50px;
+	margin: 15px 0;
+	}
+	 h2 {
+	font-size: 35px;
+	}
+	 .testimonials [class*="col-"]:not(:first-child) {
+	 margin-top: 40px;
+	}
+	 .planpricing [class*="col-"]:not(:first-child) {
+	 margin-top: 30px;
+	}
+	 .breath {
+	margin: 30px auto;
+	}
 }
  @media (max-width: 767px) {
- h1 {
-font-size: 30px;
-line-height: 40px;
-}
- h2 {
-font-size: 30px;
-line-height: 40px;
-}
- .subscribe [class*="col-"]:not(:first-child) {
- margin-top: 30px;
-}
- .masthead {
-padding: 40px 15px;
-}
+	 h1 {
+	font-size: 30px;
+	line-height: 40px;
+	}
+	 h2 {
+	font-size: 30px;
+	line-height: 40px;
+	}
+	 .subscribe [class*="col-"]:not(:first-child) {
+	 margin-top: 30px;
+	}
+	 .masthead {
+	padding: 40px 15px;
+	}
+	footer {
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+
+	.features h4 {
+		padding-right: 0;
+		padding-left: 0;
+	}
 }
  @media (max-width: 480px) {
 	 /*Media Queries for smaller devices*/
 	 .masthead {
 		background-attachment: scroll;
-		/*min-height: 190vh;*/
 	}
 	.input-lg, .btn {
 		margin-top: 10px;
