@@ -115,7 +115,7 @@ a:hover,a:focus{color:#5173bd;}
 	color:#FFF;
 	text-align:center;
 	text-shadow:0 0 25px rgba(0,0,0,.25);
-	height: 100vh;
+	min-height: 100vh;
 	font-family: 'Open Sans',Arial,sans-serif;
 	background-image:url("../images/header.jpg");
 	background-repeat:no-repeat;
@@ -471,7 +471,7 @@ padding: 40px 15px;
 	 /*Media Queries for smaller devices*/
 	 .masthead {
 		background-attachment: scroll;
-		height: 190vh;
+		/*min-height: 190vh;*/
 	}
 	.input-lg, .btn {
 		margin-top: 10px;
