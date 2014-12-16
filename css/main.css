@@ -13,7 +13,7 @@
 
 body{
 	font-family: 'Nunito','Open Sans',Arial,sans-serif;
-	background:#FFF;
+	background:#FAFAFA;
 	font-weight:300;
 	height:100%;
 	margin:0;
@@ -116,8 +116,6 @@ a:hover,a:focus{color:#5173bd;}
 	text-align:center;
 	text-shadow:0 0 25px rgba(0,0,0,.25);
 	height: 100vh;
-	/*background-color:#6883cc;*/
-	/*background-color: rgba(0,0,0,.8);*/
 	font-family: 'Open Sans',Arial,sans-serif;
 	background-image:url("../images/header.jpg");
 	background-repeat:no-repeat;
@@ -245,7 +243,7 @@ input {
 	background-image:none;
 	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 }
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:visited {
 	background-color: #209ab8!important;
 	color:#FFF!important;
 }
@@ -257,6 +255,75 @@ input {
 	font-size: 14px;
 	display: block;
 	padding: 5px 17px;
+}
+
+.features {
+	background-color: #fafafa;
+	counter-reset: step-counter;
+	max-width: 800px;
+	margin: 0 auto;
+	color: #525252;
+	font-family: 'Open Sans',Arial,sans-serif;
+}
+
+.features h2.text-center {
+	padding-top: 30px;
+}
+
+.features .step:before {
+	content: counter(step-counter);
+	counter-increment: step-counter;
+	background-color: #3498DB;
+	display: block;
+	height: 35px;
+	width: 35px;
+	border: 1px solid #2980B9;
+	border-radius: 20px;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	position: relative;
+	top: -10px;
+	left: -10px;
+	line-height: 32px;
+}
+
+.features .step {
+	background-color: white;
+	border: 1px solid #f6f6f6;
+	border-radius: 5px;
+	margin: 50px 0;
+	padding-bottom: 30px;
+}
+
+.features .step div.row {
+	padding: 0 50px;
+}
+
+.features .step img {
+	margin: auto;
+	display: block;
+}
+
+.features .step .helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.features .step h3 {
+	margin: 0;
+	font-family: 'Nunito',Arial,sans-serif;
+	font-weight: lighter;
+	font-style: italic;
+	font-size: 2.3em;
+	padding-bottom: 20px;
+}
+
+.features .step p {
+	font-size: 1.2em;
+	margin: 10px 0 0;
 }
 
 
@@ -310,10 +377,10 @@ to {
 	transform: translateY(-20px);
 }
 }
-.scrollto, .scrollto:hover {
+.scrollto, .scrollto:hover, .scrollto:active, .scrollto:visited, .scrollto:focus {
 	margin:30px;
 	display:block;
-	color:rgba(0,0,0,.8);
+	color:rgba(255,255,255,.8);
 	text-decoration:none;
 	width:200px;
 	margin:0 auto;
@@ -371,7 +438,46 @@ padding: 40px 15px;
  @media (max-width: 480px) {
 	 /*Media Queries for smaller devices*/
 	 .masthead {
-	background-attachment: scroll;
+		background-attachment: scroll;
+	}
+	.input-lg, .btn {
+		margin-top: 10px;
+	}
+
 }
 
+/*
+* Bootstrap extension to 5 columns layout
+*/
+.col-xs-15,
+.col-sm-15,
+.col-md-15,
+.col-lg-15 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.col-xs-15 {
+    width: 20%;
+    float: left;
+}
+@media (min-width: 768px) {
+.col-sm-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-15 {
+        width: 20%;
+        float: left;
+    }
 }
