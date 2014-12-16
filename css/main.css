@@ -299,6 +299,7 @@ input {
 
 .features .step div.row {
 	padding: 0 50px;
+	min-height: 100px;
 }
 
 .features .step img {
@@ -325,6 +326,24 @@ input {
 	font-size: 1.2em;
 	margin: 10px 0 0;
 }
+
+footer {
+	background-color: rgba(0,0,0,.8);
+	/*border-top: 1px solid #525252;*/
+	color: white;
+	font-family: 'Open Sans',Arial,sans-serif;
+	padding: 0 0 5px;
+}
+
+footer h3 a, footer h3 a:hover, footer h3 a:active, footer h3 a:focus, footer h3 a:visited {
+	color: white;
+	font-style: italic;
+}
+
+footer h2 {	padding: 40px 0; }
+footer h3 { padding: 20px 0 30px; }
+footer small { color: rgba(255, 255, 255, .2); }
+footer h2 small { color: white; }
 
 
 /* Boucing Arrow Animation */
@@ -439,45 +458,23 @@ padding: 40px 15px;
 	 /*Media Queries for smaller devices*/
 	 .masthead {
 		background-attachment: scroll;
+		height: 125vh;
 	}
 	.input-lg, .btn {
 		margin-top: 10px;
 	}
 
-}
+	.features .step {
+		text-align: center;
+	}
 
-/*
-* Bootstrap extension to 5 columns layout
-*/
-.col-xs-15,
-.col-sm-15,
-.col-md-15,
-.col-lg-15 {
-    position: relative;
-    min-height: 1px;
-    padding-right: 10px;
-    padding-left: 10px;
-}
+	.features .step h3 {
+		font-size: 2em;
+	}
 
-.col-xs-15 {
-    width: 20%;
-    float: left;
-}
-@media (min-width: 768px) {
-.col-sm-15 {
-        width: 20%;
-        float: left;
-    }
-}
-@media (min-width: 992px) {
-    .col-md-15 {
-        width: 20%;
-        float: left;
-    }
-}
-@media (min-width: 1200px) {
-    .col-lg-15 {
-        width: 20%;
-        float: left;
-    }
+	.features .step img {
+		margin-top: 20px !important;
+		margin-bottom: 30px;
+	}
+
 }
