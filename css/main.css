@@ -322,6 +322,19 @@ input {
 	padding-bottom: 20px;
 }
 
+.features h4 { margin: -20px 0 30px; }
+.features h4 a, .features h4 a:hover, .features h4 a:active, .features h4 a:visited, .features h4 a:focus {
+	background-color: #525252;
+	font-variant: small-caps;
+	text-transform: lowercase;
+	color: white;
+	font-weight: bold;
+	font-size: 16px;
+	padding-top: 2px;
+	margin-top: -3px;
+	margin-left: 5px;
+}
+
 .features .step p {
 	font-size: 1.2em;
 	margin: 10px 0 0;

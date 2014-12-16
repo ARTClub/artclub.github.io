@@ -63,13 +63,12 @@
 	</main>
 
 	<script src="js/jquery.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
-	<script src="js/jquery.scrollmagic.min.js"></script>
+	<script src="js/wow.min.js"></script>
 
 	<div class="features" id="process">
 		<div class="container-fluid">
 			<h2 class="text-center">How does it work?</h2>
-			<div id="step-one" class="step animated">
+			<div id="step-one" class="step wow fadeInUp">
 				<div class="row">
 					<div class="col-sm-2">
 						<img src="images/user.svg" style="margin-top: 10px;" alt="">
@@ -81,7 +80,7 @@
 				</div>
 			</div>
 
-			<div id="step-two" class="step animated">
+			<div id="step-two" class="step wow fadeInUp">
 				<div class="row">
 					<div class="col-sm-2">
 						<img src="images/camera.svg" style="margin-top: 25px;" alt="">
@@ -93,7 +92,7 @@
 				</div>
 			</div>
 
-			<div id="step-three" class="step animated">
+			<div id="step-three" class="step wow fadeInUp">
 				<div class="row">
 					<div class="col-sm-2">
 						<img src="images/tick.svg" style="margin-top: 10px;" alt="">
@@ -105,7 +104,7 @@
 				</div>
 			</div>
 
-			<div id="step-four" class="step animated">
+			<div id="step-four" class="step wow fadeInUp">
 				<div class="row">
 					<div class="col-sm-2">
 						<img src="images/delivery.svg" style="margin-top: 30px;" alt="">
@@ -117,7 +116,7 @@
 				</div>
 			</div>
 
-			<div id="step-five" class="step animated">
+			<div id="step-five" class="step wow fadeInUp">
 				<div class="row">
 					<div class="col-sm-2">
 						<img src="images/frame.svg" alt="">
@@ -130,7 +129,7 @@
 			</div>
 		</div>
 		
-		<!-- <h4 class="text-center">Interested in becoming one of our Featured Artists? <a href="https://docs.google.com/forms/d/1vQD_3ruX8cle4XUwC_EUdw1ONRrDQHIO4GP44Jtf0jc/viewform" class="btn">Register here</a></h4> -->
+		<h4 class="text-center">Interested in becoming one of our Featured Artists? <a href="https://docs.google.com/forms/d/1vQD_3ruX8cle4XUwC_EUdw1ONRrDQHIO4GP44Jtf0jc/viewform" class="btn">Register here</a></h4>
 
 	</div>
 
@@ -207,67 +206,7 @@ $(document).ready(function() {
 
 	// Animating the process steps
 	if (!is_touch_device()) {
-		var scrollMagicController = new ScrollMagic();
-
-		var tween1 = TweenMax.from('#step-one', 0.5, {
-		     opacity:0
-		});
-
-		var tween2 = TweenMax.from('#step-two', 0.5, {
-		     opacity:0
-		});
-
-		var tween3 = TweenMax.from('#step-three', 0.5, {
-		     opacity:0
-		});
-
-		var tween4 = TweenMax.from('#step-four', 0.5, {
-		     opacity:0
-		});
-
-		var tween5 = TweenMax.from('#step-five', 0.5, {
-		     opacity:0
-		});
-
-		new ScrollScene({
-		    triggerElement: '.features',
-		    offset: -60 /* offset the trigger 150px below #scene's top */
-		})
-		.setTween(tween1)
-		.setClassToggle('animated fadeInUp')
-		.addTo(scrollMagicController);
-
-		new ScrollScene({
-		    triggerElement: '.features',
-		    offset: 160 /* offset the trigger 150px below #scene's top */
-		})
-		.setTween(tween2)
-		.setClassToggle('animated fadeInUp')
-		.addTo(scrollMagicController);
-
-		new ScrollScene({
-		    triggerElement: '.features',
-		    offset: 380 /* offset the trigger 150px below #scene's top */
-		})
-		.setTween(tween3)
-		.setClassToggle('animated fadeInUp')
-		.addTo(scrollMagicController);
-
-		new ScrollScene({
-		    triggerElement: '.features',
-		    offset: 600 /* offset the trigger 150px below #scene's top */
-		})
-		.setTween(tween4)
-		.setClassToggle('animated fadeInUp')
-		.addTo(scrollMagicController);
-
-		new ScrollScene({
-		    triggerElement: '.features',
-		    offset: 820 /* offset the trigger 150px below #scene's top */
-		})
-		.setTween(tween5)
-		.setClassToggle('animated fadeInUp')
-		.addTo(scrollMagicController);
+ 		new WOW().init();
 	}
 
 	function is_touch_device() {
